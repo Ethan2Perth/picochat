@@ -147,7 +147,8 @@ this.scrollToBottom();
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: rgb(255, 255, 255);
+  background-color: #f8f9fa; /* 更浅的背景色 */
+  font-family: "Roboto", Arial, sans-serif; /* 简洁字体 */
 }
 
 .chat-title {
@@ -168,14 +169,18 @@ this.scrollToBottom();
   width: 360px;
   height: 600px;
   border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   /* 添加阴影效果 */
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
   margin-top: 10px; /* 将聊天容器下移 */
+  background-color: #ffffff;
+  border: 1px solid #e3e5e8; /* 边框颜色 */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 更柔和的阴影 */
 }
 
-
+.message-sender {
+  color: #4a90e2; /* 发送者名称颜色 */
+}
 
 .chat-messages {
   flex: 1;
@@ -193,11 +198,15 @@ this.scrollToBottom();
 
 .message-content {
   margin-top: 5px;
+  background-color: #f0f2f5; /* 消息背景色 */
+  border-radius: 8px; /* 圆角 */
+  padding: 8px 12px; /* 内边距 */
 }
+
 
 .message-time {
   font-size: 12px;
-  color: #888;
+  color: #9a9a9a; /* 时间戳颜色 */
 }
 
 .chat-input {
@@ -216,6 +225,7 @@ this.scrollToBottom();
   border-radius: 5px;
   border: none;
   outline: none;
+  border: 1px solid #e3e5e8; /* 输入框边框 */
 }
 
 .chat-input button {
@@ -224,9 +234,11 @@ this.scrollToBottom();
   border-radius: 5px;
   border: none;
   outline: none;
-  background-color: #4caf50;
-  color: white;
+  /*background-color: #4caf50;
+  color: white;*/
   cursor: pointer;
+  background-color: #4a90e2; /* 按钮颜色 */
+  color: white; /* 按钮文字颜色 */
 }
 
 .connection-closed {

@@ -1,10 +1,9 @@
 <template>
   <div class="app">
     <div class="chat-title">
-      <div class="title-line">wow</div>
-      <div class="title-line">You are gorgeous!</div>
+      <div class="title-line">PicoChat</div>
     </div>
-    <div v-if="connectionClosed" class="connection-closed">连接已断开，请刷新页面，否则发送的消息有小概率可能丢失</div>
+    <div v-if="connectionClosed" class="connection-closed">"The connection has been lost. Please refresh the page, otherwise there is a small chance that the sent messages may be lost."</div>
     <div class="chat-container">
       <div class="chat-messages" ref="chatMessages">
         <div v-for="message in messages" :key="message.id" class="message">
@@ -14,7 +13,7 @@
         </div>
       </div>
       <div class="chat-input">
-        <input v-model="newMessage" @keyup.enter="sendMessage" placeholder="输入消息..." />
+        <input v-model="newMessage" @keyup.enter="sendMessage" placeholder="Enter to send..." />
         <button @click="sendMessage">Send</button>
       </div>
     </div>
@@ -48,7 +47,7 @@ export default {
   },
   methods: {
     initWebSocket() {
-      const socketUrl = 'ws://148.135.107.207:3939';
+      const socketUrl = 'ws://127.0.0.1:3939';
       this.socket = new WebSocket(socketUrl);
 
       this.socket.addEventListener('open', () => {
@@ -70,7 +69,7 @@ export default {
     },
     fetchMessages() {
       axios
-        .get('http://148.135.107.207:3939/api/messages')
+        .get('http://127.0.0.1:3939/api/messages')
         .then((response) => {
           this.messages = response.data;
           this.scrollToBottom();
@@ -148,7 +147,7 @@ this.scrollToBottom();
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: pink;
+  background-color: rgb(255, 255, 255);
 }
 
 .chat-title {

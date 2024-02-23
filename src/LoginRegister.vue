@@ -18,7 +18,7 @@
         <input type="email" placeholder="Email">
         <input type="password" placeholder="Password">
         <a href="#">Forget Your Password?</a>
-        <button @click="navigateToApp">Sign In</button>
+        <button @click="navigateTochat">Sign In</button>
       </form>
     </div>
     <div class="toggle-container">
@@ -55,10 +55,8 @@ export default {
     };
   },  
   methods: {
-      navigateToApp() {
-        const router = this.$router;
-        router.push('/chat');
-        console.log(router);
+      navigateTochat() {
+          this.$router.push({ path: '/chat' })
 
       },
 
@@ -101,7 +99,7 @@ export default {
             console.error('Login failed:', error);
           });*/
           this.isLoggedin = true;
-          this.navigateToApp(); 
+          this.navigateTochat(); 
       },
   },
 
@@ -109,7 +107,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
 * {

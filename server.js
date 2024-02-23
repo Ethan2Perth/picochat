@@ -3,7 +3,7 @@ const cors = require('cors');
 const WebSocket = require('ws');
 const mongoose = require('mongoose');
 const Message = require('./Message.js');
-const authRoutes = require('./routes/auth'); // 引入用户路由
+
 const app = express();
 const port = 3939;
 
@@ -28,8 +28,7 @@ mongoose.connect('mongodb://127.0.0.1:27017/gorgeous', {
     console.error('Error connecting to MongoDB:', error);
   });
 
-// 注册用户路由
-app.use('/api/auth', authRoutes);
+
 
 // 处理 GET 请求，返回所有聊天消息
 app.get('/api/messages', (req, res) => {

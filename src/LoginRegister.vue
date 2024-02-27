@@ -4,21 +4,20 @@
     <div class="form-container sign-up">
       <form>
         <h1>Create Account</h1>
-        <span>please use your email for registration</span>
-        <input type="text" placeholder="Name">
-        <input type="email" placeholder="Email">
-        <input type="password" placeholder="Password">
-        <button>Sign Up</button>
+        <span>please use your name for registration</span>
+        <input v-model="signUpName" type="text" placeholder="Name">
+        <input v-model="signUpPassword" type="password" placeholder="Password">
+        <button @click="signUp">Sign Up</button>
       </form>
     </div>
     <div class="form-container sign-in">
       <form>
         <h1>Sign In</h1>
-        <span>use your email password</span>
-        <input type="email" placeholder="Email">
-        <input type="password" placeholder="Password">
+        <span>use your name password</span>
+        <input v-model="signInName" type="text" placeholder="Name">
+        <input v-model="signInPassword" type="password" placeholder="Password">
         <a href="#">Forget Your Password?</a>
-        <button @click="navigateTochat">Sign In</button>
+        <button @click="signIn">Sign In</button>
       </form>
     </div>
     <div class="toggle-container">
@@ -41,71 +40,63 @@
 <script>
 import axios from 'axios';
 
-
 export default {
   data() {
     return {
       isActive: false,
       isLoggedin: false,
       signUpName: '',
-      signUpEmail: '',
       signUpPassword: '',
-      signInEmail: '',
+      signInName: '',
       signInPassword: '',
     };
-  },  
-  methods: {
-      navigateTochat() {
-        this.$router.push({ path: '/chat' })
-
-      },
-
-      toggleSignUp(){
-          this.isActive = true;
-      },
-      toggleSignIn(){
-          this.isActive = false;
-      },
-      
-      signUp() {
-        const username = this.signUpEmail;
-        const password = this.signUpPassword;
-
-        axios
-          .post('/register', { username, password })
-          /*.then((response) => {
-            // 注册成功
-            this.isLoggedin = true;
-            this.navigateToApp(); 
-          })
-          .catch((error) => {
-            // 注册失败
-            console.error('Registration failed:', error);
-          });*/
-      },
-
-      signIn() {
-      /*  const username = this.signInEmail;
-        const password = this.signInPassword;
-
-        axios
-          .post('/login', { username, password })
-          .then((response) => {
-            // 登录成功
-            this.isLoggedin = true;
-          })
-          .catch((error) => {
-            // 登录失败
-            console.error('Login failed:', error);
-          });*/
-          this.isLoggedin = true;
-          this.navigateTochat(); 
-      },
   },
+  methods: {
+    navigateTochat() {
+      this.$router.push({ path: '/chat' });
+    },
+    toggleSignUp() {
+      this.isActive = true;
+    },
+    toggleSignIn() {
+      this.isActive = false;
+    },
+    signUp() {
+      const username = this.signUpName;
+      const password = this.signUpPassword;
 
+      axios
+        .post('/p/LoginRegister/register', { username, password })
+        .then(() => {
+          // 注册成功
+          this.isLoggedin = true;
+          this.navigateTochat();
+        })
+        .catch((error) => {
+          // 注册失败
+          console.error('Registration failed:', error);
+        });
+    },
+    signIn() {
+      const username = this.signInName;
+      const password = this.signInPassword;
 
+      axios
+        .post('/p/LoginRegister/login', { username, password })
+        .then(() => {
+          // 登录成功
+          this.isLoggedin = true;
+          this.navigateTochat();
+        })
+        .catch((error) => {
+          // 登录失败
+          console.error('Login failed:', error);
+        });
+    },
+  },
 };
 </script>
+
 
 
 <style>

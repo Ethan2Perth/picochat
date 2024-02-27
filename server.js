@@ -7,6 +7,76 @@ const Message = require('./Message.js');
 const app = express();
 const port = 3939;
 
+
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+const User = require('./user.js');
+const router = express.Router();
+
+
+
+// 连接到MongoDB数据库
+mongoose.connect('mongodb://localhost:27017/userdata', {
+  
+})
+  .then(() => {
+    console.log('Connected to userdata');
+  })
+  .catch((error) => {
+    console.error('Error connecting to MongoDB:', error);
+  });
+
+// 注册
+router.post('/LoginRegister/register', async (req, res) => {
+  try {
+    const { username, password } = req.body;
+
+    // 检查用户名是否已存在
+    const existingUser = await User.findOne({ username });
+    if (existingUser) {
+      return res.status(400).json({ message: 'Username already exists' });
+    }
+
+    // 创建新用户
+    const hashedPassword = await bcrypt.hash(password, 10);
+    const newUser = new User({ username, password: hashedPassword });
+    await newUser.save();
+
+    res.status(201).json({ message: 'User registered successfully' });
+  } catch (error) {
+    res.status(500).json({ message: 'Registration failed' });
+  }
+});
+
+// 登录
+router.post('/LoginRegister/login', async (req, res) => {
+  try {
+    const { username, password } = req.body;
+
+    // 查找用户
+    const user = await User.findOne({ username });
+    if (!user) {
+      return res.status(401).json({ message: 'Invalid username or password' });
+    }
+
+    // 验证密码
+    const isPasswordValid = await bcrypt.compare(password, user.password);
+    if (!isPasswordValid) {
+      return res.status(401).json({ message: 'Invalid username or password' });
+    }
+
+    // 创建并返回JWT令牌
+    const token = jwt.sign({ userId: user._id }, 'your-secret-key', { expiresIn: '1h' });
+    res.json({ token });
+  } catch (error) {
+    res.status(500).json({ message: 'Login failed' });
+  }
+});
+
+
+module.exports = router;
+
+
 // 使用内存数组存储聊天消息
 let messages = [];
 
@@ -17,17 +87,17 @@ app.use(express.json());
 app.use(cors());
 
 // 连接到MongoDB数据库
-mongoose.connect('mongodb://127.0.0.1:27017/gorgeous', {
+/*mongoose.connect('mongodb://localhost:27017/chatdata', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
   .then(() => {
-    console.log('Connected to MongoDB');
+    console.log('Connected to chatdata');
   })
   .catch((error) => {
     console.error('Error connecting to MongoDB:', error);
   });
-
+*/
 
 
 // 处理 GET 请求，返回所有聊天消息

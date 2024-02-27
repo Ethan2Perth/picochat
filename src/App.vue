@@ -1,5 +1,6 @@
 <script setup>
   import { RouterView } from 'vue-router';
+  document.title = "PicoChat";
 </script>
 
 <template>

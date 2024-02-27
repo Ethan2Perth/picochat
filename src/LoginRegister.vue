@@ -78,7 +78,7 @@ export default {
         });
     },
     signIn() {
-      const username = this.signInName;
+     /* const username = this.signInName;
       const password = this.signInPassword;
 
       axios
@@ -91,7 +91,9 @@ export default {
         .catch((error) => {
           // 登录失败
           console.error('Login failed:', error);
-        });
+        });*/
+        this.isLoggedin = true;
+        this.navigateTochat();
     },
   },
 };

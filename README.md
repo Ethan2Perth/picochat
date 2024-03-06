@@ -1,13 +1,13 @@
 <h1 align="center">PicoChat</h1>
 <div align="center">
   <a href="https://github.com/Ethan2Perth/picochat">
-    <img src="https://share.cxai.top/-8ipNAKNgaX" alt="Logo" height="156">
+    <img src="https://share.cxai.top/-kZsfDyujNs" alt="Logo" height="156">
   </a>
 </div>
 
 A minimal web-based real-time chat application built on WebSocket. It uses WebSocket for real-time messaging, Axios for HTTP requests, and Moment.js for date formatting.
 
-[![Video Title](https://github.com/Ethan2Perth/picochat/blob/main/src/assets/demo.mp4)](https://github.com/Ethan2Perth/picochat/blob/main/src/assets/demo.mp4?autoplay=1)
+[![Video Title](https://share.cxai.top/-pLPibvifaW)](https://share.cxai.top/-FfFR7xMTjY/demo.mp4?autoplay=1)
 
 ## Quick Start
 

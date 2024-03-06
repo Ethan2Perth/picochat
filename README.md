@@ -7,7 +7,7 @@
 
 A minimal web-based real-time chat application built on WebSocket. It uses WebSocket for real-time messaging, Axios for HTTP requests, and Moment.js for date formatting.
 
-[![Video Title](https://share.cxai.top/-pLPibvifaW)](https://share.cxai.top/-FfFR7xMTjY/demo.mp4?autoplay=1)
+[![Video Title](https://share.cxai.top/-pLPibvifaW)](https://share.cxai.top/-FfFR7xMTjY)
 
 ## Quick Start
 

@@ -1,13 +1,13 @@
 <h1 align="center">PicoChat</h1>
 <div align="center">
   <a href="https://github.com/Ethan2Perth/picochat">
-    <img src="https://github.com/Ethan2Perth/picochat/assets/picochat.png" alt="Logo" height="156">
+    <img src="https://img2.imgtp.com/2024/03/06/wnJdxav3.png" alt="Logo" height="156">
   </a>
+</div>
 
-A minimal web-based real-time chat application built on WebSocket.
-WebSocket for real-time messaging, Axios for HTTP requests, and Moment.js for date formatting. 
+A minimal web-based real-time chat application built on WebSocket. It uses WebSocket for real-time messaging, Axios for HTTP requests, and Moment.js for date formatting.
 
-[![Video Title](https://github.com/Ethan2Perth/picochat/assets/demo.mp4)](https://github.com/Ethan2Perth/picochat/assets/demo.mp4?autoplay=1)
+[![Video Title](https://github.com/Ethan2Perth/picochat/blob/main/src/assets/demo.mp4)](https://github.com/Ethan2Perth/picochat/blob/main/src/assets/demo.mp4?autoplay=1)
 
 ## Quick Start
 
@@ -21,12 +21,11 @@ npm run serve
 node server.js
 ```
 
-## To DO List
+## To-Do List
 1. User authentication
 2. Account system
 3. Private messaging and group chatting
 
 ## Acknowledgments
-Front-end UI inspired by youtuber@AsmrProg
-link: https://www.youtube.com/watch?v=PlpM2LJWu-s
-
+Front-end UI inspired by YouTuber @AsmrProg
+Link: [https://www.youtube.com/watch?v=PlpM2LJWu-s](https://www.youtube.com/watch?v=PlpM2LJWu-s)

@@ -1,7 +1,7 @@
 <h1 align="center">PicoChat</h1>
 <div align="center">
   <a href="https://github.com/Ethan2Perth/picochat">
-    <img src="https://share.cxai.top/-kZsfDyujNs" alt="Logo" height="156">
+    <img src="https://github.com/Ethan2Perth/picochat/assets/125174108/413932d5-2ea5-4b30-867c-6961bd12e742" alt="Logo" height="156">
   </a>
 </div>
 

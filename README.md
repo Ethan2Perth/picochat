@@ -7,7 +7,7 @@
 
 A minimal web-based real-time chat application built on WebSocket. It uses WebSocket for real-time messaging, Axios for HTTP requests, and Moment.js for date formatting.
 
-[![Video Title](https://share.cxai.top/-pLPibvifaW)](https://share.cxai.top/-FfFR7xMTjY)
+[![Video Title](https://share.cxai.top/-pLPibvifaW)](https://github.com/Ethan2Perth/picochat/assets/125174108/47c95a82-8b23-47e5-b8ea-8cb51a318d06)
 
 ## Quick Start
 
